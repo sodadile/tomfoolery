@@ -10821,7 +10821,8 @@
         },
         "new_gender": [
             "trans male",
-            "nonbinary"
+            "nontrinary",
+            "gib"
         ]
     },
     {
@@ -10844,7 +10845,8 @@
         },
         "new_gender": [
             "trans female",
-            "nonbinary"
+            "nontrinary",
+            "gib"
         ]
     },
     {
