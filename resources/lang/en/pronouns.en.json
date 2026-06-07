@@ -26,6 +26,15 @@
             "self": "herself",
             "conju": 2,
             "gender": 2
+        },
+        "3": {
+            "subject": "xe",
+            "object": "xem",
+            "poss": "xeir",
+            "inposs": "xeirs",
+            "self": "xemself",
+            "conju": 2,
+            "gender": 3
         }
     }
 }

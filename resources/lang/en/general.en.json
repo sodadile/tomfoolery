@@ -30,8 +30,8 @@
             "many": "warriors"
         },
         "medicine cat": {
-            "one": "medicine cat",
-            "many": "medicine cats"
+            "one": "cleric",
+            "many": "clerics"
         },
         "mediator": {
             "one": "mediator",
@@ -42,8 +42,8 @@
             "many": "apprentices"
         },
         "medicine cat apprentice": {
-            "one": "medicine cat apprentice",
-            "many": "medicine cat apprentices"
+            "one": "cleric apprentice",
+            "many": "cleric apprentices"
         },
         "mediator apprentice": {
             "one": "mediator apprentice",
