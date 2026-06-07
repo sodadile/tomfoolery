@@ -8,6 +8,13 @@ from scripts.cat.enums import CatRank, CatAge
 
 
 class SkillPath(Enum):
+    COOK = ("gourmand", "good cook", "great cook", "master chef")
+    CRAFTER = ("nimble paws", "good crafter", "great crafter", "unusually dextrous")
+    ARTIST = ("scribbles on parchment", "good artist", "great artist", "old master")
+    MUSICIAN = ("makes up songs", "good musician", "great musician", "rockstar")
+    GAMER = ("loves toys", "good sport", "great sport", "alpha gamer")
+    DRUID = ("friend to all bugs", "nature lover", "expert ecologist", "connected to nature")
+    MERCHANT = ("trades with friends", "trades with Clanmates", "trades with all", "trusted merchant")
     TEACHER = ("quick to help", "good teacher", "great teacher", "excellent teacher")
     HUNTER = ("moss ball hunter", "good hunter", "great hunter", "renowned hunter")
     FIGHTER = (
@@ -154,6 +161,13 @@ class Skill:
     point_range = (0, 29)
 
     short_strings = {
+        SkillPath.COOK: "cooking",
+        SkillPath.CRAFTER: "crafting",
+        SkillPath.ARTIST: "art",
+        SkillPath.MUSICIAN: "music",
+        SkillPath.GAMER: "gaming",
+        SkillPath.DRUID: "druidry",
+        SkillPath.MERCHANT: "trading",
         SkillPath.TEACHER: "teaching",
         SkillPath.HUNTER: "hunting",
         SkillPath.FIGHTER: "fighting",
@@ -298,6 +312,19 @@ class CatSkills:
     # Mentor Inflence groups.
     # pylint: disable=unsupported-binary-operation
     influence_flags = {
+        SkillPath.COOK: SkillTypeFlag.OBSERVANT,
+        SkillPath.CRAFTER: SkillTypeFlag.AGILE
+        | SkillTypeFlag.OBSERVANT
+        | SkillTypeFlag.SMART,
+        SkillPath.ARTIST: SkillTypeFlag.OBSERVANT
+        | SkillTypeFlag.SMART,
+        SkillPath.MUSICIAN: SkillTypeFlag.OBSERVANT
+        | SkillTypeFlag.SMART,
+        SkillPath.GAMER: SkillTypeFlag.SMART
+        | SkillTypeFlag.OBSERVANT
+        | SkillTypeFlag.SOCIAL,
+        SkillPath.DRUID: SkillTypeFlag.OBSERVANT,
+        SkillPath.MERCHANT: SkillTypeFlag.SOCIAL,
         SkillPath.TEACHER: SkillTypeFlag.STRONG
         | SkillTypeFlag.AGILE
         | SkillTypeFlag.SMART
@@ -669,6 +696,27 @@ class CatSkills:
         """Generates a CatSkill object"""
         new_skill = CatSkills()
         conversion = {
+            "good cook": (SkillPath.COOK, 1),
+            "great cook": (SkillPath.COOK, 2),
+            "master chef": (SkillPath.COOK, 3),
+            "good crafter": (SkillPath.CRAFTER, 1),
+            "great crafter": (SkillPath.CRAFTER, 2),
+            "unusually dextrous": (SkillPath.CRAFTER, 3),
+            "good artist": (SkillPath.ARTIST, 1),
+            "great artist": (SkillPath.ARTIST, 2),
+            "old master": (SkillPath.ARTIST, 3),
+            "good musician": (SkillPath.MUSICIAN, 1),
+            "great musician": (SkillPath.MUSICIAN, 2),
+            "rockstar": (SkillPath.MUSICIAN, 3),
+            "good sport": (SkillPath.GAMER, 1),
+            "great sport": (SkillPath.GAMER, 2),
+            "alpha gamer": (SkillPath.GAMER, 3),
+            "nature lover": (SkillPath.DRUID, 1),
+            "expert ecologist": (SkillPath.DRUID, 2),
+            "connected to nature": (SkillPath.DRUID, 3),
+            "trades with Clanmates": (SkillPath.MERCHANT, 1),
+            "trades with all": (SkillPath.MERCHANT, 2),
+            "trusted merchant": (SkillPath.MERCHANT, 3),
             "strong connection to StarClan": (SkillPath.STAR, 2),
             "good healer": (SkillPath.HEALER, 1),
             "great healer": (SkillPath.HEALER, 2),

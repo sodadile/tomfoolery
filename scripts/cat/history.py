@@ -280,6 +280,13 @@ class History:
 
         # working under the impression that these blurbs will be preceded by "become better at"
         skill_influence_text = {
+            SkillPath.COOK: ["cooking"],
+            SkillPath.CRAFTER: ["crafting"],
+            SkillPath.ARTIST: ["art"],
+            SkillPath.MUSICIAN: ["music"],
+            SkillPath.GAMER: ["playing games"],
+            SkillPath.DRUID: ["druidry"],
+            SkillPath.MERCHANT: ["trading"],
             SkillPath.TEACHER: ["teaching"],
             SkillPath.HUNTER: ["hunting"],
             SkillPath.FIGHTER: ["fighting"],
