@@ -238,7 +238,7 @@ dev_tools = false
   # As in, your max kits number should probably be 5 more than the min kits number.
   # But that's not required - just makes more sense that way with how the litters are generated.
   min_kits = 1
-  max_kits = 6
+  max_kits = 3
 
   # number / total for that age across all kit amounts = chance of having that many kits for that age
   [pregnancy.one_kit_possibility]
@@ -248,33 +248,33 @@ dev_tools = false
     senior = 4
 
   [pregnancy.two_kit_possibility]
-    "young adult" = 10
-    adult = 13
-    "senior adult" = 15
-    senior = 3
-
-  [pregnancy.three_kit_possibility]
     "young adult" = 17
     adult = 15
     "senior adult" = 5
     senior = 1
 
-  [pregnancy.four_kit_possibility]
+  [pregnancy.three_kit_possibility]
     "young adult" = 12
     adult = 8
     "senior adult" = 2
     senior = 0
 
+  [pregnancy.four_kit_possibility]
+    "young adult" = 0
+    adult = 0
+    "senior adult" = 0
+    senior = 0
+
   [pregnancy.five_kit_possibility]
-    "young adult" = 6
-    adult = 2
+    "young adult" = 0
+    adult = 0
     "senior adult" = 0
     senior = 0
 
   [pregnancy.max_kit_possibility]
-    "young adult" = 2
-    adult = 0
-    "senior adult" = 0
+    "young adult" = 12
+    adult = 8
+    "senior adult" = 2
     senior = 0
 
 [cat_generation]
@@ -379,7 +379,7 @@ dev_tools = false
 
 [roles."medicine cat apprentice"]
   # maximum number of medicine cat apprentices to full medicine cats (e.g. 4 adult medcats can have 2 apps total)
-  max_medcats_to_apps = 2
+  max_medcats_to_apps = 1
 
   # minimum percentage of medcat population that are seniors for buff to app chance
   threshold_percentage_seniors = 30
@@ -504,7 +504,7 @@ dev_tools = false
 
 [clan_creation]
   # Set this to -1 for it to be infinite
-  rerolls = 3
+  rerolls = -1
 
 [graduation]
   # base possible experience gain for apprentices
