@@ -48,26 +48,26 @@
 [clan]
     [clan.general]
         autosave = false
-        disasters = false
+        disasters = true
         showxp = false
-        "random med cat" = true
+        "random med cat" = false
         fading = true
-        save_faded_copy = false
+        save_faded_copy = true
         backgrounds = true
     
     [clan.role]
         deputy = false
         12_moon_graduation = false
         retirement = false
-        become_mediator = false
+        become_mediator = true
     
     [clan.relation]
-        affair = false
-        "unmated parentage" = false
+        affair = true
+        "unmated parentage" = true
         "same sex birth" = false
-        "same sex adoption" = false
+        "same sex adoption" = true
         "single parentage" = false
-        "romantic with former mentor" = true
+        "romantic with former mentor" = false
         "first cousin mates" = false
     
     [clan.freshkill_tactics]
