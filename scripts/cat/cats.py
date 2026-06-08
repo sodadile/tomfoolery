@@ -210,7 +210,7 @@ class Cat:
         self.example = example
         self.thought = ""
         self.genderalign: Union[
-            Literal["trans male", "trans female", "male", "female", "nonbinary"], str
+            Literal["trans male", "trans female", "male", "female", "nontrinary", "gib"], str
         ] = None
         self.birth_cooldown = 0
         self.illnesses = {}
@@ -428,14 +428,17 @@ class Cat:
         # trans cat chances
         self.genderalign = self.gender
         trans_chance = randint(0, 50)
-        nb_chance = randint(0, 75)
+        nb_chance = randint(0, 100)
+        gib_chance = randint(0, 75)
 
         # GENDER IDENTITY
         if self.age.is_baby() or self.disable_random:
             # newborns can't be trans, sorry babies
             pass
         elif nb_chance == 1:
-            self.genderalign = "nonbinary"
+            self.genderalign = "nontrinary"
+        elif gib_chance == 1:
+            self.genderalign = "gib"
         elif trans_chance == 1:
             if self.gender == "female":
                 self.genderalign = "trans male"
@@ -650,7 +653,8 @@ class Cat:
             "male",
             "trans female",
             "trans male",
-            "nonbinary",
+            "nontrinary",
+            "gib",
         ):
             return i18n.t(f"general.{self.genderalign}")
         # otherwise, it's custom - just return it directly

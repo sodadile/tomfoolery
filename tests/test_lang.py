@@ -30,20 +30,20 @@ class TestLocalisation(unittest.TestCase):
         female_cat = Cat(gender="female", disable_random=True)
         female_cat.genderalign = "female"
 
-        nonbinary_cat = Cat()
-        nonbinary_cat.genderalign = "nonbinary"
+        nontrinary_cat = Cat()
+        nontrinary_cat.genderalign = "nontrinary"
 
         mystery_cat = Cat(gender="potato", disable_random=True)
         cls.cat_combos_two = {
             "male-male": [[male_cat, male_cat], cls.pronouns["1"]],
             "male-female": [[male_cat, female_cat], cls.pronouns["1"]],
-            "male-nonbinary": [[male_cat, nonbinary_cat], cls.pronouns["1"]],
+            "male-nontrinary": [[male_cat, nontrinary_cat], cls.pronouns["1"]],
             "female-male": [[female_cat, male_cat], cls.pronouns["1"]],
             "female-female": [[female_cat, female_cat], cls.pronouns["2"]],
-            "female-nonbinary": [[female_cat, nonbinary_cat], cls.pronouns["2"]],
-            "nonbinary-male": [[nonbinary_cat, male_cat], cls.pronouns["1"]],
-            "nonbinary-female": [[nonbinary_cat, female_cat], cls.pronouns["2"]],
-            "nonbinary-nonbinary": [[nonbinary_cat, nonbinary_cat], cls.pronouns["0"]],
+            "female-nontrinary": [[female_cat, nontrinary_cat], cls.pronouns["2"]],
+            "nontrinary-male": [[nontrinary_cat, male_cat], cls.pronouns["1"]],
+            "nontrinary-female": [[nontrinary_cat, female_cat], cls.pronouns["2"]],
+            "nontrinary-nontrinary": [[nontrinary_cat, nontrinary_cat], cls.pronouns["0"]],
             "unknown": [[mystery_cat, mystery_cat], cls.pronouns["0"]],
         }
 
@@ -52,7 +52,7 @@ class TestLocalisation(unittest.TestCase):
         set_lang_config_directory("resources/lang/en/config.json")
 
     def test_get_singular_pronouns(self):
-        for i, gender in enumerate(["nonbinary", "male", "female"]):
+        for i, gender in enumerate(["nontrinary", "male", "female"]):
             with self.subTest("get pronouns", gender=gender):
                 self.assertDictEqual(self.pronouns[str(i)], get_new_pronouns(gender)[0])
         for i, gender in enumerate(["trans male", "trans female"]):
@@ -83,10 +83,10 @@ class TestLocalisation(unittest.TestCase):
         female_cat = Cat(gender="female", disable_random=True)
         female_cat.genderalign = "female"
 
-        nonbinary_cat = Cat()
-        nonbinary_cat.genderalign = "nonbinary"
+        nontrinary_cat = Cat()
+        nontrinary_cat.genderalign = "nontrinary"
 
-        for cat in (male_cat, female_cat, nonbinary_cat):
+        for cat in (male_cat, female_cat, nontrinary_cat):
             for pronoun in ("subject", "object", "poss", "inposs", "self"):
                 with self.subTest(
                     "singular pronouns", cat=cat.genderalign, pronoun=pronoun

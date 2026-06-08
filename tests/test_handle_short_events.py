@@ -124,7 +124,7 @@ class TestHandleTransition(unittest.TestCase):
         self.chosen_event = ShortEvent(
             event_id="test",
             sub_type=["transition"],
-            new_gender=["trans male", "nonbinary"],
+            new_gender=["trans male", "nontrinary", "gib"],
         )
         self.chosen_event.main_cat = Cat(gender="female", disable_random=True)
 

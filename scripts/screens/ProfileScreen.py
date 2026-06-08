@@ -264,6 +264,7 @@ class ProfileScreen(Screens):
                     "trans female",
                     "male",
                     "trans male",
+                    "gib",
                 ]:
                     self.the_cat.genderalign = self.the_cat.gender
                 elif (
@@ -289,9 +290,12 @@ class ProfileScreen(Screens):
                     and self.the_cat.genderalign == "female"
                 ):
                     self.the_cat.genderalign = "trans male"
-                # if the cat is trans then set them to nonbinary
+                # if the cat is trans then set them to gib
                 elif self.the_cat.genderalign in ["trans female", "trans male"]:
-                    self.the_cat.genderalign = "nonbinary"
+                    self.the_cat.genderalign = "gib"
+                # if the cat is gib then set them to nontrinary
+                elif self.the_cat.genderalign == "gib":
+                    self.the_cat.genderalign = "nontrinary"
                 self.the_cat.pronouns = get_new_pronouns(self.the_cat.genderalign)
                 self.clear_profile()
                 self.build_profile()
@@ -2228,13 +2232,18 @@ class ProfileScreen(Screens):
                 )
             elif self.the_cat.genderalign in ["trans female", "trans male"]:
                 self.cis_trans_button.set_text(
-                    "screens.profile.change_gender_nonbinary"
+                    "screens.profile.change_gender_gib"
+                )
+            elif self.the_cat.genderalign == "gib":
+                self.cis_trans_button.set_text(
+                    "screens.profile.change_gender_nontrinary"
                 )
             elif self.the_cat.genderalign not in [
                 "female",
                 "trans female",
                 "male",
                 "trans male",
+                "gib",
             ]:
                 self.cis_trans_button.set_text("screens.profile.change_gender_cis")
             elif self.the_cat.gender == "male" and self.the_cat.genderalign == "female":

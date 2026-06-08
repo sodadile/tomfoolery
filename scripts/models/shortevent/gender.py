@@ -2,9 +2,10 @@ from enum import Enum
 
 
 class NewGenderEnum(Enum):
-    nonbinary = "nonbinary"
+    nontrinary = "nontrinary"
     trans_male = "trans male"
     trans_female = "trans female"
+    gib = "gib"
 
 
 class GenderEnum(Enum):

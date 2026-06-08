@@ -908,9 +908,10 @@
     },
     "NewGenderEnum": {
       "enum": [
-        "nonbinary",
+        "nontrinary",
         "trans male",
-        "trans female"
+        "trans female",
+        "gib"
       ],
       "title": "NewGenderEnum",
       "type": "string"

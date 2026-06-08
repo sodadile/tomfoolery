@@ -492,8 +492,12 @@ class MediationScreen(Screens):
             gender_icon = image_cache.load_image(
                 "resources/images/transmasc_big.png"
             ).convert_alpha()
+        elif cat.genderalign == "gib":
+            gender_icon = image_cache.load_image(
+                "resources/images/gib_big.ping"
+            ).convert_alpha()
         else:
-            # Everyone else gets the nonbinary icon
+            # Everyone else gets the nontrinary icon
             gender_icon = image_cache.load_image(
                 "resources/images/nonbi_big.png"
             ).convert_alpha()
